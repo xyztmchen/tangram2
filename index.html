@@ -1,45 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
-	<meta charset="utf-8">
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-	<title>Unity WebGL Player | DMJ</title>
-	<link href="TemplateData/favicon.ico" rel="shortcut icon">
-	<link href="TemplateData/style.css" rel="stylesheet">
-	<script src="TemplateData/UnityProgress.js">
-	</script>
-	<script src="Build/UnityLoader.js">
-	</script>
-	<script>
-	        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/project_33.json", {onProgress: UnityProgress});
-	</script>
-</head>
-<body onresize="ChangeCanvas()">
-	<div class="webgl-content">
-		<div id="gameContainer" style="width: 100%; height: 100%"></div>
-	</div>
-	<script type="text/javascript">
-		window.onload = function() {
-			ChangeCanvas();
-	    }
-
-		function ChangeCanvas()
-	    {
-			if(window.innerWidth / window.innerHeight < 1.6 )
-			{
-				document.getElementById("gameContainer").style.width = window.innerWidth + "px";
-	           	document.getElementById("gameContainer").style.height = window.innerWidth *0.625+ "px";
-	           	document.getElementById("#canvas").style.width = window.innerWidth + "px";
-	           	document.getElementById("#canvas").style.height = window.innerWidth *0.625 + "px";
-			}
-			else
-			{
-				document.getElementById("gameContainer").style.width = window.innerHeight / 0.625 + "px";
-	           	document.getElementById("gameContainer").style.height = window.innerHeight + "px";
-	           	document.getElementById("#canvas").style.width = window.innerHeight / 0.625 + "px";
-	           	document.getElementById("#canvas").style.height = window.innerHeight + "px";
-			}
-		}
-	</script>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Tangram</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>  
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/project_33.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body>
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+        <div class="title">Tangram</div>
+      </div>
+    </div>
+  </body>
 </html>
